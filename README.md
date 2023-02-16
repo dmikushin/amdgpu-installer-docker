@@ -1,14 +1,13 @@
-# ROCm Toolchain Installer
+# AMDGPU Installer
 
-Install selected version of ROCm toolchain to the host system.
+Provide the host system with all available versions of AMDGPU DKMS sources. A selected version could then be activated within the host system for the actual use.
 
-The package installation in performed within a Docker container, and the target folder is exposed to the host system. This way the host system is not spoiled by multiple (and potentially conflicting) ROCm repositories. The resulting installations are fully functional in the host system, given that the host system has provided a compatible GPU driver.
+The package installation in performed within a Docker container, and the target folder is exposed to the host system. This way the host system is not spoiled by multiple (and potentially conflicting) AMDGPU repositories. The resulting installations are to be used by DKMS subsystem, only one version of driver could be active at a time.
 
 ## Example
 
 ```
-./rocm-install.sh 5.3.3
-./rocm-install.sh 5.4.3
+./amdgpu-install-all.pl
 ```
 
 ## Environment Modules
