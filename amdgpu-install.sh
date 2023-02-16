@@ -10,6 +10,7 @@ docker build -t amdgpu-${AMDGPU_VERSION} .
 docker run --rm -it \
 	-e AMDGPU_VERSION=${AMDGPU_VERSION} \
 	-v /opt/amdgpu/${AMDGPU_VERSION}:/var/lib/dkms/amdgpu \
+	-v /opt/amdgpu/${AMDGPU_VERSION}/lib:/opt/amdgpu/lib/x86_64-linux-gnu \
 	-v /usr/src:/usr/src \
 	-v /sys/firmware/efi/efivars:/sys/firmware/efi/efivars:ro \
 	-v $(pwd)/.installed:/.installed \
